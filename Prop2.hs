@@ -28,11 +28,10 @@ bigBool = replicate 1000000 False
 
 
 main = defaultMain [
-  bgroup "update/logic" [
-      boolBench "tc"  test1
-      , boolBench "record"  test2
-      , boolBench "record-eta"  test3
-      , boolBench "proxy-record"  test4
-      , boolBench "proxy-record-with-dummy"  test5
+  bgroup "tc" [
+      boolBench "Implementation 1"  test1
+      , boolBench "Implementation 2"  test2
+      , boolBench "Implementation 3"  test4
+      , boolBench "Implementation 4"  test5
    ]
  ]
