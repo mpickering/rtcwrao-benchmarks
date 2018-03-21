@@ -13,6 +13,12 @@ test2 = dors boolDict
 test3 :: [Bool] -> Bool
 test3 xs = dors boolDict xs
 
+test4 :: [Bool] -> Bool
+test4 xs = pors xs
+
+test5 :: [Bool] -> Bool
+test5 xs = porsProxy xs
+
 boolBench name f = env boolEnv (\h -> bench name $ nf f h)
 
 boolEnv = return bigBool
@@ -26,5 +32,7 @@ main = defaultMain [
       boolBench "tc"  test1
       , boolBench "record"  test2
       , boolBench "record-eta"  test3
+      , boolBench "proxy-record"  test4
+      , boolBench "proxy-record-with-dummy"  test5
    ]
  ]
